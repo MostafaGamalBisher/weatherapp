@@ -1,7 +1,7 @@
 import tkinter as tk
 
 window = tk.Tk()
-window.title("almdrasa weather app")
+window.title("Almdrasa Weather App")
 window.rowconfigure(0, weight=1)
 window.rowconfigure(1, weight=1)
 window.columnconfigure(0, weight=1)
