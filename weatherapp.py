@@ -1,4 +1,4 @@
-#Weatherapp
+#WeatherApp
 
 import tkinter as tk
 
