@@ -5,12 +5,13 @@
 
 import tkinter as tk
 import requests
+from dotenv import load_dotenv 
+import os 
 
-#creating the API key and base URL for weather data
+load_dotenv() 
+api_key = os.getenv("MY_SECRET_KEY") #loading the API key from .env file
 
 def getWeather ():
-
-    api_key = "f956d3bc4701b44c02fe62aaaceb3e3c"
 
     city = textareaentry.get()    #getting the city name from the entry area
 
@@ -39,7 +40,7 @@ def getWeather ():
         humidityValuelabel.config(text=f"{humidity} %")
         windspeedValuelabel.config(text=f"{wind_speed} km/h")
         PressureValuelabel.config(text=f"{pressure} hPa")
-        precipitationValuelabel.config(text=f"{precipitation} mm")
+        precipitationValuelabel.config(text= precipitation.capitalize())
    
 #Creating the main window
 
@@ -82,18 +83,18 @@ precipitationlabel.grid( column=0 , row=5 , sticky="e" , padx=10 , pady=10)
 #completing the weather info labels
 
 temperatureValuelabel = tk.Label(window, text="-- °C")
-temperatureValuelabel.grid( column=1 , row=1 , sticky="W" )
+temperatureValuelabel.grid( column=1 , row=1 , sticky="w" )
 
 humidityValuelabel = tk.Label(window, text="-- %")
-humidityValuelabel.grid( column=1 , row=2 , sticky="W" )
+humidityValuelabel.grid( column=1 , row=2 , sticky="w" )
 
 windspeedValuelabel = tk.Label(window, text="-- km/h")
-windspeedValuelabel.grid( column=1 , row=3 , sticky="W" )
+windspeedValuelabel.grid( column=1 , row=3 , sticky="w" )
 
 PressureValuelabel = tk.Label(window, text="-- hPa")
-PressureValuelabel.grid( column=1 , row=4 , sticky="W" )
+PressureValuelabel.grid( column=1 , row=4 , sticky="w" )
 
-precipitationValuelabel = tk.Label(window, text="-- %")
+precipitationValuelabel = tk.Label(window, text="-- ")
 precipitationValuelabel.grid( column=1 , row=5 , sticky="w" )
 
 
